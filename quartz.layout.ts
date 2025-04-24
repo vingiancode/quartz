@@ -5,7 +5,18 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [
+    Component.ConditionalRender({
+      component: Component.RecentNotes({
+                   showTags: false,
+                   linkToMore: "/math" as SimpleSlug,
+                   limit: 5,
+                   title: "Recent blog posts:",
+	                 // filter: (f) => f.relativePath?.startsWith("blog/") ?? false,
+      }),
+      condition: (page) => page.fileData.slug == "index",
+    }),
+  ],
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/jackyzha0/quartz",
