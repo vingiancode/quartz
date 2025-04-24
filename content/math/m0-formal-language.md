@@ -78,7 +78,7 @@ Just as we saw in the [propositional-formal-language](#propositional-formal-lang
 2. If $\phi$ and $\psi$ are *wffs*, then $(\neg \phi)$ and $(\phi \text{AND} \psi)$ are *wffs*, and similarly for other *connectives* in the *FCC*, with parentheses enclosing each application. 
 3. If $\phi$ is a *wff* and $x$ is a *variable* *symbol*, then $\exists x \phi$ is a *wff*.
 
-> The *propositional-formal-language* is a very elemental *formal-language* and it lacks the power to express ideas more complex than true or false statements. As we've said, the *predicative-formal-language* is a generalization that adds to it the power to talk about about *variables* and [existence](#existential-quantifier). This seemingly simple addition might not seem to represent a big change, but incredibly, it ends up providing the *formal-language* with (as we'll see a little later) the power to express all the mathematics known to the moment!!
+> The *propositional-formal-language* is a very elemental *formal-language* and it lacks the power to express ideas more complex than true or false statements. As we've said, the *predicative-formal-language* is a generalization that adds to it the power to talk about *variables* and [existence](#existential-quantifier). This seemingly simple addition might not seem to represent a big change, but incredibly, it ends up providing the *formal-language* with (as we'll see a little later) the power to express all the mathematics known to the moment!!
 
 ## additional-quantifiers
 
