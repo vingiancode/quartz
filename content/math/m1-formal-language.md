@@ -14,6 +14,8 @@ Say we have two *propositions* $p$ and $q$ (each, as we saw, with two possible *
 
 ![](../assets/images/binary-logical-connectives.png)
 
+> Note: The *logical-connectives* 11, 13, 2, and 4 in the table are called **implication**, **converse-implication**, **non-implication**, and **converse-non-implication** respectively.
+
 The new *propositions* created using *connectives* (like $r=p$XOR$q$ or $s=p$NOR$q$) are called **compound-propositions** in contrast to the starting ones ($p$ and $q$ in this case) that are called **atomic-propositions**.
 
 > Example: We can combine the *propositions* of the previous example with for example the **XNOR** *connective* to obtain a new *proposition* that is *True* only when they have the same *truth-value*. In this case $p\text{XNOR}q$ read as "4 is even XNOR Rome is the capital of Italy" is a True *proposition* since both *atomic-propositions* are *True* (have *truth-value* *True*), and $p\text{XNOR}r$ read "4 is even XNOR 5 is even" is a *False* *proposition* since $p$ is *True* and $r$ is *False*. 
