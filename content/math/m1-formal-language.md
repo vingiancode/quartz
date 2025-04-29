@@ -47,14 +47,21 @@ As we have been doing, in general, to represent *atomic-propositions* we use low
  
 ## equivalent-propositions
 
-A *proposition* can have the exact same *truth-values* than other, f.e. $p$ and its double *negation* $\neg (\neg p)$, or $pNORq$ and the *negation* of $pORq$ (check the table of *binary-logical-connectives*). In that cases we talk about **equivalent-propositions** and denote them using $\iff$. For example, we can say that $p$ and $\neg(\neg p)$ are *equivalent-propositions*, or directly write $p\iff \neg(\neg p)$. The same for $pNORq \iff \neg(pORq)$. It is common sometimes to replace one for the other for the sake of readability, comparison, brevity, etc. There exist two pairs of *equivalent-propositions* that, given their importance and widespread use, receive a name (**Morgan's laws**) and that are $\neg(p\lor q) \iff (\neg p) \land (\neg q)$ and $\neg(p\land q) \iff (\neg p)\lor (\neg q)$ (the *negation* of *OR* is the *AND* of the *negations* and vice versa). The equivalences of the *truth-values* are shown in the next table.
+A *proposition* can have the exact same *truth-values* than other, f.e. $p$ and its double *negation* $\neg (\neg p)$, or $pNORq$ and the *negation* of $pORq$ (check the table of *binary-logical-connectives*). In that cases we talk about **equivalent-propositions** and denote them using $\iff$. For example, we can say that $p$ and $\neg(\neg p)$ are *equivalent-propositions*, or directly write $p\iff \neg(\neg p)$. The same for $pNORq \iff \neg(pORq)$. It is common sometimes to replace one for the other for the sake of readability, comparison, brevity, etc. There exist two pairs of *equivalent-propositions* that, given their importance and widespread use, receive a name (**Morgan's laws**) and that are $\neg(p\lor q) \iff (\neg p) \land (\neg q)$ and $\neg(p\land q) \iff (\neg p)\lor (\neg q)$ (the *negation* of *OR* is the *AND* of the *negations* and vice versa). The equivalences of the *truth-values* are shown in the next tables.
 
-| $p$ | $q$ | $p\lor q$ | $\neg(p\lor q)$ | $\neg p$ | $\neg q$ | $(\neg p) \land (\neg q)$ |     | $p\land q$ | $\neg(p\land q)$ | $(\neg p)\lor (\neg q)$ |
-| :-: | :-: | :-------: | :-------------: | :------: | :------: | :-----------------------: | :-: | :--------: | :--------------: | :---------------------: |
-|  T  |  T  |     T     |        F        |    F     |    F     |             F             |     |     T      |        F         |            F            |
-|  T  |  F  |     T     |        F        |    F     |    T     |             F             |     |     F      |        T         |            T            |
-|  F  |  T  |     T     |        F        |    T     |    F     |             F             |     |     F      |        T         |            T            |
-|  F  |  F  |     F     |        T        |    T     |    T     |             T             |     |     F      |        T         |            T            |
+| $p$ | $q$ | $p\lor q$ | $\neg(p\lor q)$ | $\neg p$ | $\neg q$ | $(\neg p) \land (\neg q)$ |
+| :-: | :-: | :-------: | :-------------: | :------: | :------: | :-----------------------: |
+|  T  |  T  |     T     |        F        |    F     |    F     |             F             |
+|  T  |  F  |     T     |        F        |    F     |    T     |             F             |
+|  F  |  T  |     T     |        F        |    T     |    F     |             F             |
+|  F  |  F  |     F     |        T        |    T     |    T     |             T             |
+
+| $p$ | $q$ | $p\land q$ | $\neg(p\land q)$ | $\neg p$ | $\neg q$ | $(\neg p)\lor (\neg q)$ |
+| :-: | :-: | :--------: | :--------------: | :------: | :------: | :---------------------: |
+|  T  |  T  |     T      |        F         |    F     |    F     |            F            |
+|  T  |  F  |     F      |        T         |    F     |    T     |            T            |
+|  F  |  T  |     F      |        T         |    T     |    F     |            T            |
+|  F  |  F  |     F      |        T         |    T     |    T     |            T            |
 
 Another pair of *equivalent-propositions* that is important (enough to receive a name) is $p \rightarrow q \iff (\neg q) \rightarrow (\neg p)$, and is known as the **contrapositive-law**. For this reason, the *proposition* $(\neg q) \rightarrow (\neg p)$ is known as the **contrapositive** of the *implication* $p \rightarrow q$. Again the equivalences of the *truth-values* are shown in the next table.
 
