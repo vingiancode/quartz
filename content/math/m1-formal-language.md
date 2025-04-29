@@ -43,6 +43,41 @@ As we have been doing, in general, to represent *atomic-propositions* we use low
 
 > Examples of *wffs* of the *propositional-formal-language* with *FCC* $\{\neg, OR, AND\}$ are $p$, $\neg q$, $pORq$, $\neg(pORq)$, $(pORq)ANDs$, $(pORq)AND(sAND(qOR(\neg p)))$, etc. And examples of *formulas* that are not *wffs* are $pp$, $ORq$, $(pAND)q$, $q($, $(pOR)AND\neg p$, $((p)ORq$, $p((\neg$, $\neg pq(r$, etc.
 
+> Notation note: The *logical-connectives* *AND* and *OR* are often represented with the *symbols* $\land$ and $\lor$ respectively. E.g. the *proposition* $(pORq)ANDs$ is written as $(p\lor q)\land s$, the *proposition* $\neg(pORq)$ written $\neg(p\lor q)$, etc.
+ 
+## equivalent-propositions
+
+A *proposition* can have the exact same *truth-values* than other, f.e. $p$ and its double *negation* $\neg (\neg p)$, or $pNORq$ and the *negation* of $pORq$ (check the table of *binary-logical-connectives*). In that cases we talk about **equivalent-propositions** and denote them using $\iff$. For example, we can say that $p$ and $\neg(\neg p)$ are *equivalent-propositions*, or directly write $p\iff \neg(\neg p)$. The same for $pNORq \iff \neg(pORq)$. It is common sometimes to replace one for the other for the sake of readability, comparison, brevity, etc. There exist two pairs of *equivalent-propositions* that, given their importance and widespread use, receive a name (**Morgan's laws**) and that are $\neg(p\lor q) \iff (\neg p) \land (\neg q)$ and $\neg(p\land q) \iff (\neg p)\lor (\neg q)$ (the *negation* of *OR* is the *AND* of the *negations* and vice versa). The equivalences of the *truth-values* are shown in the next table.
+
+| $p$ | $q$ | $p\lor q$ | $\neg(p\lor q)$ | $\neg p$ | $\neg q$ | $(\neg p) \land (\neg q)$ |     | $p\land q$ | $\neg(p\land q)$ | $(\neg p)\lor (\neg q)$ |
+| :-: | :-: | :-------: | :-------------: | :------: | :------: | :-----------------------: | :-: | :--------: | :--------------: | :---------------------: |
+|  T  |  T  |     T     |        F        |    F     |    F     |             F             |     |     T      |        F         |            F            |
+|  T  |  F  |     T     |        F        |    F     |    T     |             F             |     |     F      |        T         |            T            |
+|  F  |  T  |     T     |        F        |    T     |    F     |             F             |     |     F      |        T         |            T            |
+|  F  |  F  |     F     |        T        |    T     |    T     |             T             |     |     F      |        T         |            T            |
+
+Another pair of *equivalent-propositions* that is important (enough to receive a name) is $p \rightarrow q \iff (\neg q) \rightarrow (\neg p)$, and is known as the **contrapositive-law**. For this reason, the *proposition* $(\neg q) \rightarrow (\neg p)$ is known as the **contrapositive** of the *implication* $p \rightarrow q$. Again the equivalences of the *truth-values* are shown in the next table.
+
+| $p$ | $q$ | $p \rightarrow q$ | $\neg q$ | $\neg p$ | $(\neg q) \rightarrow (\neg p)$ |
+| :-: | :-: | :---------------: | :------: | :------: | :-----------------------------: |
+|  T  |  T  |         T         |    F     |    F     |                T                |
+|  T  |  F  |         F         |    T     |    F     |                F                |
+|  F  |  T  |         T         |    F     |    T     |                T                |
+|  F  |  F  |         T         |    T     |    T     |                T                |
+
+A final important equivalence is $p XNOR q \iff (p\to q)AND(q \to p)$. For this reason, the logical-connective XNOR is also called the **biconditional** and represented with the *symbol* $\leftrightarrow$ (i.e. instead of $p XNOR q$ we often write $p\leftrightarrow q$).
+
+| $p$ | $q$ | $p \rightarrow q$ | $q \to  p$ | $(p\to q)AND(q \to p)$ | $p XNOR q$ |
+| :-: | :-: | :---------------: | :--------: | :--------------------: | :--------: |
+|  T  |  T  |         T         |     T      |           T            |     T      |
+|  T  |  F  |         F         |     T      |           F            |     F      |
+|  F  |  T  |         T         |     F      |           F            |     F      |
+|  F  |  F  |         T         |     T      |           T            |     T      |
+
+## order-of-precedence
+
+To reduce the use of parentheses, it is common to define an **order-of-precedence** for the _logical-connectives_ of the *FCC*. That is, define an order in which they have to be applied if different *connectives* appear in a *proposition* without parentheses. For example, a very common _order-of-precedence_ of *connectives*, is: *negation* $\neg$, *AND* $\land$, *OR* $\lor$, *implication* $\to$, and then *biconditional* (or *XOR*) $\leftrightarrow$. With this order, the *proposition* $p \land q \to r$ is interpreted as $(p \land q) \to r$, because _conjunction_ ($\land$) has higher precedence than _implication_ ($\to$). Similarly, $\neg p \lor q$ is interpreted as $(\neg p) \lor q$, since _negation_ ($\neg$) has higher precedence than _disjunction_ ($\lor$). In contrast, $p \to q \land r$ is interpreted as $p \to (q \land r)$, and $\neg p \leftrightarrow q \to r$ is interpreted as $(\neg p) \leftrightarrow (q \to r)$.
+
 # predicates
 
 A **predicate** is a statement containing **variables**, which becomes a *proposition* when all the *variables* are given a specific value. Historically we denote *variables* with lowercase letters starting from $x$, i.e. $x,y,z,a,b\dots$, etc. and *predicates* with uppercase letters starting from $P$. The number of *variables* in a *predicate* is called its **arity**.
