@@ -58,6 +58,8 @@ Finally, and to end a search of many years, in 1953, Carew Meredith showed that 
 * Axiom: $((((p \to q) \to(\neg r \to \neg s)) \to r) \to t) \to((t \to p) \to(s \to p))$
 This axiom, allows to have a *zeroth-order-formal-system* (called the **Meredith-axiomatic-system**) that not only has an inference-system of a single inference-rule (the *modus-ponens*), but also an axiomatic-system of a single axiom (the *Meredith-axiom*).
 
+> Note: #todo axiomatic-formal-systems using only NAND (list in this [article](https://en.wikipedia.org/wiki/List_of_axiomatic_systems_in_logic#Sheffer's_stroke)) and [Wolfram's axiom](https://writings.stephenwolfram.com/2018/11/logic-explainability-and-the-future-of-understanding/)
+
 ### inference-formal-system
 
 The other type of *zeroth-order-formal-systems* are known as **inference-formal-systems** (or *formal-systems* based on *inference*) since they take a different approach by eliminating *axioms* entirely and instead, relying purely on a rich *inference-system*. The best known consists of 11 inference-rules designed to mimic the natural reasoning processes of mathematicians. They are *modus-ponens*, *disjunctive-syllogism*, *conjunction*, and 8 more listed and explained [here](https://en.wikipedia.org/wiki/Propositional_calculus#Inference_rules). By starting without *axioms* and building *proofs* step-by-step using these rules, this system provides a flexible framework for constructing proofs that feels more intuitive. This approach contrasts with the axiomatic-formal-systems, emphasizing process over initial assumptions.
