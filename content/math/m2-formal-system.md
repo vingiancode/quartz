@@ -11,11 +11,11 @@ Any *formal-system* $\mathcal F=(\mathcal L, \mathcal I, \mathcal S)$ that uses 
 
 ## inference-rules
 
-A *zeroth-order-formal-system* deals with *propositions*, and their *truth-values*, then the things to be inferred will be *truth-values* of *propositions*. For example, suppose we are told that the *proposition* $p AND q$ is a *theorem* (i.e. a *True* *proposition*). If we look at the [definition](m1-formal-language#logical-connectives), the only combination of truth-values of $p$ and $q$ for which it is True is both $p=T$ and $q=T$, so, if we are told that $p AND q$ is *theorem*, then we know that both $p$ and $q$ are theorems too (*True* propositions). This is an **inference**. We are told that $p AND q$ is a theorem (i.e. that is True), and nothing about the truth-values of the propositions $p$ and $q$, but this information is implicit in the *logical-connective* definition itself. This is, this information is not directly given to us, we are just told that $pANDq$ is a theorem, but we can "*infer*" that they are theorems too since the only combination of truth-values of $p$ and $q$ for which $pANDq$ is True is when both $p$ and $q$ are True. 
+A *zeroth-order-formal-system* deals with *propositions*, and their *truth-values*, then the things to be inferred will be *truth-values* of *propositions*. For example, suppose we are told that the *proposition* $p AND q$ is a *theorem* (i.e. a *True* *proposition*). If we look at the [definition](m1-formal-language#logical-connectives), the only combination of *truth-values* of $p$ and $q$ for which it is *True* is both $p=T$ and $q=T$, so, if we are told that $p AND q$ is *theorem*, then we know that both $p$ and $q$ are *theorems* too (*True* *propositions*). This is an **inference**. We are told that $p AND q$ is a *theorem* (i.e. that is True), and nothing about the *truth-values* of the *propositions* $p$ and $q$, but this information is implicit in the *logical-connective* definition itself. This is, this information is not directly given to us, we are just told that $pANDq$ is a *theorem*, but we can "*infer*" that they are *theorems* too since the only combination of *truth-values* of $p$ and $q$ for which $pANDq$ is *True* is when both $p$ and $q$ are *True*. 
 ![[truth-values-and.png]]
-If we are told that a given collection of propositions $\mathcal P$ (known as **premises**) are theorems, and if for all cases for which these propositions are True, some proposition $p$ (called the **conclusion**) is also True, we say that we can infer from $\mathcal P$ (being theorems) that $p$ is also True. This is nothing more than what we have called an inference-rule and is symbolically represented as $\mathcal P \models p$. For the case of $pANDq$ this rule is called **simplification** and is represented as $pANDq \models p$. Note that we can also use simplification to infer $q$, i.e., $pANDq \models q$. Conversely, (and as an example of an inference-rule of more than one premise) we can be told that the two propositions $p$ and $q$ are premises (therefore theorems, therefore both True) and from that infer that $pANDq$ is True (note that again the for the only row where both $p=T$ and $q=T$, we have $pANDq=T$). This inference-rule represented as $p,q\models pANDq$ is called **conjunction**.
+If we are told that a given collection of *propositions* $\mathcal P$ (known as **premises**) are *theorems*, and if for all cases for which these *propositions* are *True*, some *proposition* $p$ (called the **conclusion**) is also *True*, we say that we can *infer* from $\mathcal P$ (being *theorems*) that $p$ is also *True*. This is nothing more than what we have called an *inference-rule* and is symbolically represented as $\mathcal P \models p$. For the case of $pANDq$ this rule is called **simplification** and is represented as $pANDq \models p$. Note that we can also use *simplification* to *infer* $q$, i.e., $pANDq \models q$. Conversely, (and as an example of an *inference-rule* of more than one *premise*) we can be told that the two *propositions* $p$ and $q$ are *premises* (therefore *theorems*, therefore both *True*) and from that *infer* that $pANDq$ is *True* (note that again that for the only row where both $p=T$ and $q=T$, we have $pANDq=T$). This *inference-rule* represented as $p,q\models pANDq$ is called **conjunction**.
 
-Note, however, that not from every theorem (or collection of them) we can infer something. For example, $pORq\models p$ is not an inference-rule, since if we are told that $pORq$ is a theorem, we have three possible combinations of values of $p$ and $q$ that makes it True, and in two $p$ is True, but in the other $p$ is False. If from a rule $\mathcal P \models p$ we can actually infer the *conclusion* $p$, we say that the rule **valid**, if not (as in the case of $pORq\models p$) we called it a **fallacy**. 
+Note, however, that not from every *theorem* (or collection of them) we can *infer* something. For example, $pORq\models p$ is not an *inference-rule*, since if we are told that $pORq$ is a theorem, we have three possible combinations of values of $p$ and $q$ that makes it True, and in two $p$ is True, but in the other $p$ is False. If from a rule $\mathcal P \models p$ we can actually infer the *conclusion* $p$, we say that the rule **valid**, if not (as in the case of $pORq\models p$) we called it a **fallacy**. 
 ![[valid-inference-rule.png]]
 However, if we add the the premise $\neg q$, the only combination where both are True is $q=F$ and $p=T$ so we then can actually infer $p$ as a theorem. Then $pORq\models p$ is a fallacy, but $p OR q,\neg p \models q$ is an inference-rule, called **disjunctive-syllogism**. Note that we can also use the *disjunctive-syllogism* to infer $p$ by adding $\neg q$ as a premise (i.e. $p OR q,\neg q \models p$).
 
@@ -34,46 +34,34 @@ As we saw, a rule from which we cannot actually infer the conclusion is called a
 
 ![[fallacy.png]]
 
-Other common *fallacy* is $p\to q, \neg p \models \neg q$, known as the **denying-the-antecedent-fallacy**. Note that $p \to q$ is *True* when $\neg p$ is *True* (i.e., $p$ is *False*) for both values of $q$ (and therefore both values of $\neg q$).
+Other example of a common *fallacy* is $p\to q, \neg p \models \neg q$, known as the **denying-the-antecedent-fallacy**. Note that $p \to q$ is *True* when $\neg p$ is *True* (i.e., $p$ is *False*) for both values of $q$ (and therefore both values of $\neg q$).
 ## examples
 
-vimos que a *zeroth-order-formal-system* a *formal-system* $\mathcal F=(\mathcal L, \mathcal I, \mathcal S)$ that uses as its *formal-language* $\mathcal L$ the *propositional-formal-language*. Así que los distintos tipos que podemos tener quedan definidos por las combinaciones de $\mathcal I$, y $\mathcal S$. Ahora que vimos algunas common infenrence-rules of a a *zeroth-order-formal-system*, podemos listar algunos ejemplos de este tipo de formal-system. 
+We saw that a *zeroth-order-formal-system* a *formal-system* $\mathcal F=(\mathcal L, \mathcal I, \mathcal S)$ that uses the *propositional-formal-language* as its *formal-language* $\mathcal L$. Thus, the different types of *zeroth-order formal systems* are defined by  different combinations of *inference-system* (*$\mathcal I$*) and *axiomatic-system* (*$\mathcal S$*). Now that we’ve explored some common [*inference-rules*](#inference-rules) of a *zeroth-order formal system*, let’s examine a few concrete examples to illustrate how these systems are constructed and applied.
 
-**simple-axiom-system** (or $P_2$) tiene como inference-system a formado solo por la inference-rule modus-ponens, y como axiomatic-system al formado por 3 axiomas, conocidos como Łukasiewicz-axioms y son: 
-- $p \rightarrow(q \rightarrow p)$
-- $(p \rightarrow(q \rightarrow r)) \rightarrow((p \rightarrow q) \rightarrow(p \rightarrow r))$
-- $(\neg p \rightarrow \neg q) \rightarrow(q \rightarrow p)$
-Font: https://en.wikipedia.org/wiki/Propositional_calculus#%C5%81ukasiewicz's_P2
+### axiomatic-formal-systems
 
-meredith-axiom-system usa también solo modus-ponens, y baja la cantidad de axiomas increíblemente a uno: el axioma meredith 
-Font: https://us.metamath.org/mpeuni/meredith.html
+The first type of of *zeroth-order-formal-system* we'll talk about is known as [axiomatic](https://en.wikipedia.org/wiki/Propositional_calculus#Syntactic_proof_via_axioms) since they all have an *inference-system* that contains just one *inference-rule* (the *modus-ponen*s i.e. $p \to q, p \models q$), and therefore, their power comes from the intelligent choice of *axioms* for the *axiomatic-system*. The first system of this kind was formally described by Gottlob Fredge in his 1879 book called "Begriffsschrift" (for what is called **Frege-axiomatic-system**) and had the following six *axioms*:
+- Axiom 1: $p \rightarrow(q \rightarrow p)$
+- Axiom 2: $(p \rightarrow(q \rightarrow r)) \rightarrow((p \rightarrow q) \rightarrow(p \rightarrow r))$
+- Axiom 3: $(p \rightarrow(q \rightarrow r)) \rightarrow(q \rightarrow(p \rightarrow r))$
+- Axiom 4: $(p \rightarrow q) \rightarrow(\neg q \rightarrow \neg p)$
+- Axiom 5: $\neg \neg p \rightarrow p$
+- Axiom 6: $p \rightarrow \neg \neg p$
 
-Hay también un conocido como natural-deduction-system that consists of no axioms, but uses an inference-system of 11 inference-rules 
-https://en.wikipedia.org/wiki/Propositional_calculus#Inference_rules
+Jan Łukasiewicz showed in 1930 that, in *Frege-system*, "the third *axiom* can be derived from the preceding two, and that the last three *axioms* can be replaced by the single one $(\neg p \rightarrow \neg q) \rightarrow(p \rightarrow q)$, reducing the number of *axioms* to just three, in the system known as **Łukasiewicz-axiomatic-system** :
+- Axiom 1: $p \rightarrow(q \rightarrow p)$
+- Axiom 2: $(p \rightarrow(q \rightarrow r)) \rightarrow((p \rightarrow q) \rightarrow(p \rightarrow r))$
+- Axiom 3: $(\neg p \rightarrow \neg q) \rightarrow(q \rightarrow p)$
 
-## examples
+Finally, and to end a search of many years, in 1953, Carew Meredith showed that the number of axioms can be incredibly reduced to just one, obviously known as the [**Meredith-axiom**](https://us.metamath.org/mpeuni/meredith.html).
+* Axiom: $((((p \to q) \to(\neg r \to \neg s)) \to r) \to t) \to((t \to p) \to(s \to p))$
+This axiom, allows to have a *zeroth-order-formal-system* (called the **Meredith-axiomatic-system**) that not only has an inference-system of a single inference-rule (the *modus-ponens*), but also an axiomatic-system of a single axiom (the *Meredith-axiom*).
 
-We saw that a **zeroth-order formal system** is a **formal system** *$\mathcal F = (\mathcal L, \mathcal I, \mathcal S)$* that uses the **propositional formal language** as its **formal language** *$\mathcal L$*. Thus, the different types of **zeroth-order formal systems** are defined by the combinations of the **inference system** (*$\mathcal I$*) and the **axiomatic system** (*$\mathcal S$*). Now that we’ve explored some common **inference rules** of a **zeroth-order formal system**, let’s examine a few concrete examples to illustrate how these systems are constructed and applied.
+### inference-formal-system
 
-## Simple Axiom System (P₂)
-The **simple axiom system**, also known as P₂, is a classic **zeroth-order formal system** that relies on a minimal yet powerful structure. Its **inference system** consists solely of the **modus ponens** rule (*$p \to q, p \models q$*), which allows us to infer a conclusion *$q$* when a conditional *$p \to q$* and its antecedent *$p$* are both theorems. The **axiomatic system** comprises three axioms, known as the Łukasiewicz axioms, which serve as the starting points for proofs:
-- *$p \to (q \to p)$* (If *$p$* is true, then *$q \to p$* is true, reflecting a basic implication property).
-- *$(p \to (q \to r)) \to ((p \to q) \to (p \to r))$* (A complex nesting of implications that ensures transitivity in certain contexts).
-- *$(\neg p \to \neg q) \to (q \to p)$* (The contrapositive relationship between negations and implications, linking to the **contrapositive law** from [m1-formal-language](#equivalent-propositions)).
+The other type of *zeroth-order-formal-systems* are known as **inference-formal-systems** (or *formal-systems* based on *inference*) since they take a different approach by eliminating *axioms* entirely and instead, relying purely on a rich *inference-system*. The best known consists of 11 inference-rules designed to mimic the natural reasoning processes of mathematicians. They are *modus-ponens*, *disjunctive-syllogism*, *conjunction*, and 8 more listed and explained [here](https://en.wikipedia.org/wiki/Propositional_calculus#Inference_rules). By starting without *axioms* and building *proofs* step-by-step using these rules, this system provides a flexible framework for constructing proofs that feels more intuitive. This approach contrasts with the axiomatic-formal-systems, emphasizing process over initial assumptions.
 
-These axioms, combined with **modus ponens**, allow the system to derive a wide range of propositional tautologies, making P₂ a foundational model in logic.  
-*Source:* https://en.wikipedia.org/wiki/Propositional_calculus#%C5%81ukasiewicz's_P2
-
-## Meredith Axiom System
-The **Meredith axiom system** takes the concept of minimalism in **axiomatic systems** to an impressive extreme. Like P₂, it uses **modus ponens** as its sole **inference rule**, but it reduces the number of axioms to a single statement, known as the Meredith axiom. This axiom is:
-- *(((p → q) → (r → s)) → t) → (((t → p) → r) → (s → p))*
-
-At first glance, this single axiom might seem daunting due to its nested implications, but its brilliance lies in its ability to generate all tautologies of propositional logic when paired with **modus ponens**. Discovered by E.J. Meredith in 1953, this axiom demonstrates that a single, carefully crafted statement can encode the entire expressive power of propositional logic, provided we have a mechanism like **modus ponens** to expand it. The Meredith axiom works by embedding the logical relationships of implication, negation, and conjunction within its structure. For example, by repeatedly applying **modus ponens** and substituting specific propositions, one can derive basic tautologies such as *$p \to p$* or more complex ones like *$(p \to q) \to ((q \to r) \to (p \to r))$* (hypothetical syllogism). This reduction to a single axiom is a landmark in logic, showcasing how economy in axioms does not sacrifice completeness, as long as the **inference system** is sufficiently robust.  
-*Source:* https://us.metamath.org/mpeuni/meredith.html
-
-## Natural Deduction System
-Another notable **zeroth-order formal system** is the **natural deduction system**, which takes a different approach by eliminating axioms entirely. Instead, it relies on a rich **inference system** consisting of 11 **inference rules**, designed to mimic the natural reasoning processes of mathematicians. These rules include familiar ones like **modus ponens**, **disjunctive syllogism**, and **conjunction**, as well as introduction and elimination rules for connectives (e.g., introducing *$\land$* with *$p, q \models p \land q$* or eliminating *$\to$* with **modus ponens**). By starting without axioms and building proofs step-by-step using these rules, the system provides a flexible framework for constructing proofs that feel intuitive. This approach contrasts with axiomatic systems like P₂ or Meredith, emphasizing process over initial assumptions.  
-*Source:* https://en.wikipedia.org/wiki/Propositional_calculus#Inference_rules
 # first-order-formal-system
 
 Any *formal-system* $\mathcal F=(\mathcal L, \mathcal I, \mathcal S)$ that uses as its *formal-language* $\mathcal L$ the *predicative-formal-language* is called a **first-order-formal-system**.
@@ -81,18 +69,3 @@ Any *formal-system* $\mathcal F=(\mathcal L, \mathcal I, \mathcal S)$ that uses 
 ## inference-rules
 
 **universal-instantation**
-# properties-of-formal-systems
-
-A *formal-system* is **consistent** if it cannot derive both a *wff* $\phi$ and its *negation* $\neg \phi$ as *theorems*. In other words, a *consistent* *formal-system* does not contain contradictions.
-
-> Example: If a *formal-system* for arithmetic derives both "2 + 2 = 4" and "2 + 2 $\neq$ 4" as *theorems*, it is inconsistent, which would undermine its usefulness.
-
-A *formal-system* is **complete** if every *wff* in its *formal-language* is either a *theorem* or its *negation* is a *theorem*. That is, a *complete* *formal-system* can prove or disprove every statement expressible in its *formal-language*.
-
-> Example: A simple *formal-system* for propositional logic with a single *proposition* $p$ might be *complete* if it can prove either $p$ or $\neg p$. However, as we’ll see in a later entry, many interesting *formal-systems*, such as those for arithmetic, are not *complete* (a result known as Gödel’s Incompleteness Theorem).
-
-A *formal-system* is **decidable** if there exists an algorithm that can determine, for any *wff* in its *formal-language*, whether it is a *theorem*. In other words, a *decidable* *formal-system* has a mechanical procedure to check the provability of any statement.
-
-> Example: Some simple *formal-systems*, like certain propositional logics, are *decidable* because we can systematically check all possible proofs. However, many *formal-systems* involving *predicates* and *quantifiers* (like our *predicative-formal-language*) are not *decidable*, as we’ll explore later.
-
-These properties—*consistency*, *completeness*, and *decidability*—are fundamental to understanding the power and limitations of *formal-systems*, and they will play a crucial role in our study of mathematics.
