@@ -15,11 +15,11 @@ A *zeroth-order-formal-system* deals with *propositions*, and their *truth-value
 ![[truth-values-and.png]]
 If we are told that a given collection of *propositions* $\mathcal P$ (known as **premises**) are *theorems*, and if for all cases for which these *propositions* are *True*, some *proposition* $p$ (called the **conclusion**) is also *True*, we say that we can *infer* from $\mathcal P$ (being *theorems*) that $p$ is also *True*. This is nothing more than what we have called an *inference-rule* and is symbolically represented as $\mathcal P \models p$. For the case of $pANDq$ this rule is called **simplification** and is represented as $pANDq \models p$. Note that we can also use *simplification* to *infer* $q$, i.e., $pANDq \models q$. Conversely, (and as an example of an *inference-rule* of more than one *premise*) we can be told that the two *propositions* $p$ and $q$ are *premises* (therefore *theorems*, therefore both *True*) and from that *infer* that $pANDq$ is *True* (note that again that for the only row where both $p=T$ and $q=T$, we have $pANDq=T$). This *inference-rule* represented as $p,q\models pANDq$ is called **conjunction**.
 
-Note, however, that not from every *theorem* (or collection of them) we can *infer* something. For example, $pORq\models p$ is not an *inference-rule*, since if we are told that $pORq$ is a theorem, we have three possible combinations of values of $p$ and $q$ that makes it True, and in two $p$ is True, but in the other $p$ is False. If from a rule $\mathcal P \models p$ we can actually infer the *conclusion* $p$, we say that the rule **valid**, if not (as in the case of $pORq\models p$) we called it a **fallacy**. 
+Note, however, that not from every *theorem* (or collection of them) we can *infer* something. For example, $pORq\models p$ is not an *inference-rule*, since if we are told that $pORq$ is a *theorem*, we have three possible combinations of values of $p$ and $q$ that makes it *True*, and in two $p$ is *True*, but in the other $p$ is *False*. If from a rule $\mathcal P \models p$ we can actually infer the *conclusion* $p$, we say that the rule is **valid**, if not (as in the case of $pORq\models p$) we called it a **fallacy**. A *valid* rule then is one in which is _impossible_ for all the *premises* to be *True* while the *conclusion* is *False*. A **sound** rule is a rule that is *valid* and all its *premises* are *True*.
 ![[valid-inference-rule.png]]
-However, if we add the the premise $\neg q$, the only combination where both are True is $q=F$ and $p=T$ so we then can actually infer $p$ as a theorem. Then $pORq\models p$ is a fallacy, but $p OR q,\neg p \models q$ is an inference-rule, called **disjunctive-syllogism**. Note that we can also use the *disjunctive-syllogism* to infer $p$ by adding $\neg q$ as a premise (i.e. $p OR q,\neg q \models p$).
+However, if we add the the *premise* $\neg q$, the only combination where both are *True* is $q=F$ and $p=T$ so we then can actually *infer* $p$ as a *theorem*. Then $pORq\models p$ is a *fallacy*, but $p OR q,\neg p \models q$ is an *inference-rule*, called **disjunctive-syllogism**. Note that we can also use the *disjunctive-syllogism* to *infer* $p$ by adding $\neg q$ as a *premise* (i.e. $p OR q,\neg q \models p$).
 
-Other very commonly used inference-rule in a *zeroth-order-formal-system* is $p\to q, p \models q$, known as **modus-ponens**. We can again, looking at the definitions, that for all cases for which the premises are True (just one in this case), $q$ is True. 
+Other very commonly used *inference-rule* in a *zeroth-order-formal-system* is $p\to q, p \models q$, known as **modus-ponens**. We can again, looking at the definitions, that for all cases for which the *premises* are *True* (just one in this case), $q$ is *True*.
 ![[modus-ponens 1.png]]
 Suppose we are given $p\to q$ and $\neg q$ as premises. Using the *contrapositive-law* $p \rightarrow q \iff (\neg q) \rightarrow (\neg p)$ (that we introduce in the [previous-entry](m1-formal-language#equivalent-propositions)) we have that $\neg q \to \neg p$ is a theorem. And from it and $\neg q$ we can infer $\neg p$ using modus-ponens ($\neg q \to \neg p, \neg q \models \neg p$). This inference-rule, represented as $p\to q, \neg q \models \neg p$, is called **modus-tollens** and is a variance of the modus-ponens using the contrapositive-law.
 
@@ -64,8 +64,28 @@ The other type of *zeroth-order-formal-systems* are known as **inference-formal-
 
 # first-order-formal-system
 
-Any *formal-system* $\mathcal F=(\mathcal L, \mathcal I, \mathcal S)$ that uses as its *formal-language* $\mathcal L$ the *predicative-formal-language* is called a **first-order-formal-system**.
+Any *formal-system* $\mathcal F=(\mathcal L, \mathcal I, \mathcal S)$ that uses as its *formal-language* $\mathcal L$ the *predicative-formal-language* is called a **first-order-formal-system**. 
 
-## inference-rules
+En general un *first-order-formal-system* extends a *zeroth-order-formal-system* by adding machinery to handle *predicates*, *quantifiers*, and *variables*. El ejemplo más conocido y utilizado, llamado **Hilbert-firsrt-order-formal-system** extends an [axiomatic-formal-system](#axiomatic-formal-systems) que vimos pueden ser reducidos a tan solo un axioma (the *Meredith-axiom*) by extending its propositional-formal-language to a predicative-formal-language with $\forall$ as the unique quantifier ([remember](m1-formal-language#redundancy-of-quantifiers) that we can derive the rest from any other quantifier), and extending the axiomatic-system with the following three axioms:
 
-**universal-instantation**
+Q5. $\forall x(\phi) \rightarrow \phi[x:=t]$ where $t$ may be substituted for $x$ in $\phi$
+Q6. $\forall x(\phi \rightarrow \psi) \rightarrow(\forall x(\phi) \rightarrow \forall x(\psi))$
+Q7. $\phi \rightarrow \forall x(\phi)$ where $x$ is not free in $\phi$.
+
+The [wikipedia-article](https://en.wikipedia.org/wiki/Hilbert_system#Predicate_logic_(example_system)) says also that we can, equivalently have the *Hilbert-firsrt-order-formal-system* by adding just the axioms Q5 to the axiomatic-system, but adding to the inference-system the predicative inference-rule known as **universal-instantation** que hace redundantes a Q6 y Q7. 
+
+#todo investigar y explicar bien este último párrafo.
+
+# properties-of-formal-systems
+
+As we saw, we say that we *prove* (inside a *formal-system* $\mathcal F=(\mathcal L, \mathcal I, \mathcal S)$) a *wff* $\phi$ of the *formal-language* $\mathcal L$ if we can mark it as a *theorem* applying *inference-rules* (of the *inference-system* $\mathcal I$) over *axioms* (of the *axiomatic-system* $\mathcal S$) or other *theorems* previously *proved*. We say that we **disprove** a *wff* $\phi$ of $\mathcal L$ when we *prove* its *negation* $\neg \phi$ as a *theorem*.
+
+A *formal-system* is **consistent** if for every *wff* $\phi$ in $\mathcal L$ we cannot both *prove* it and *disprove* it, i.e. if we cannot *prove* both $\phi$ and its *negation* $\neg \phi$ as *theorems*. 
+
+> Note: In a not *consistent* *formal-system* there exists a *wff* $\phi$ such that both $\phi$ and $\neg \phi$ are *theorems*, then we can *prove* as a *theorem* any *wff* (since if  $\phi \wedge \neg \phi$ is a *contradiction* that let us *prove* any *wff* $\varphi$ using the *modus-tollens* ($(\phi \wedge \neg \phi) \to \varphi, (\phi \wedge \neg \phi) \models \varphi$)). So, by *contraposition*, a *formal-system* is *consistent* if it does not contain *contradictions*, or equivalently, if we cannot *prove* any *wff*.
+
+A *formal-system* is **complete** if for every *wff* $\phi$ in $\mathcal L$ we can *prove* it or *disprove* it.
+
+A *formal-system* is **decidable** if for any *wff* $\phi$ in $\mathcal L$ there exists an **algorithm** that can determine whether it is a *theorem*.
+
+#todo hablar antes de qué es un algorithm
