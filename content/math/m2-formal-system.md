@@ -80,7 +80,7 @@ The [wikipedia-article](https://en.wikipedia.org/wiki/Hilbert_system#Predicate_l
 
 # properties-of-formal-systems
 
-As we saw, we say that we *prove* (inside a *formal-system* $\mathcal F=(\mathcal L, \mathcal I, \mathcal S)$) a *wff* $\phi$ of the *formal-language* $\mathcal L$ if we can mark it as a *theorem* applying *inference-rules* (of the *inference-system* $\mathcal I$) over *axioms* (of the *axiomatic-system* $\mathcal S$) or other *theorems* previously *proved*. We say that we **disprove** a *wff* $\phi$ of $\mathcal L$ when we *prove* its *negation* $\neg \phi$ as a *theorem*.
+As we saw, we say that we *prove* (inside a *formal-system* $\mathcal F=(\mathcal L, \mathcal I, \mathcal S)$) a *wff* $\phi$ of the *formal-language* $\mathcal L$ if we can mark it as a *theorem* applying *inference-rules* (of the *inference-system* $\mathcal I$) over *axioms* (of the *axiomatic-system* $\mathcal S$) or other *theorems* previously *proved*. We say that we **disprove** a *wff* $\phi$ of $\mathcal L$ when we *prove* its *negation* $\neg \phi$.
 
 A *formal-system* is **consistent** if for every *wff* $\phi$ in $\mathcal L$ we cannot both *prove* it and *disprove* it, i.e. if we cannot *prove* both $\phi$ and its *negation* $\neg \phi$ as *theorems*. 
 
