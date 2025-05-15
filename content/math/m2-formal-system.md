@@ -90,4 +90,4 @@ A *formal-system* is **complete** if for every *wff* $\phi$ in $\mathcal L$ we c
 
 A *formal-system* is **decidable** if for any *wff* $\phi$ in $\mathcal L$ there exists an **algorithm** that can determine whether it is a *theorem*.
 
-#todo hablar antes de qué es un algorithm
+#todo hablar antes de qué joraca es formalmente un algorithm

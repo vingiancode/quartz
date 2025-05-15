@@ -28,4 +28,4 @@ A **bilinear-product** is a *bilinear-map* between the same *vector-space* ($\ci
 
 > When talking about *algebra-spaces*, it is common to ignore the word "space" and talk directly about an **algebra**, a **unital-algebra**, an **associative-algebra**, etc.
 
-A *vector-homomorphism* (*linear-map*) that also *preserves* the *bilinear-product* $\circ$ is called an **algebra-homomorphism** (and again, if it's *injection*, is called an **algebra-monomorphism**, if it's a *bijection*, an **algebra-isomorphism**, etc.).
+A *vector-homomorphism* (*linear-map*) that also *preserves* the *bilinear-product* $\circ$ is called an **algebra-homomorphism** (and again, if it's an *injection* is called an **algebra-monomorphism**, if it's a *bijection* an **algebra-isomorphism**, etc.).
