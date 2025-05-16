@@ -53,6 +53,14 @@ https://us.metamath.org/mpeuni/mmtheorems53.html#mm5279b
 > Informal version: Every *non-empty* *set* *contains* a *set* *disjoint* from itself.
 
 One consequence is that it denies the existence of a set containing itself
+
+## axiom-of-separation
+
+## axiom-of-power-set
+
+## axiom-of-infinity
+
+## axiom-of-choice
 ## summary
 
 Axiom-of-extensionality (E): Two *sets* with the same *elements* are the same *set*.
@@ -78,8 +86,7 @@ Este sistema consiste de 9 *axioms* , pero ha quedado de esta manera for clarity
 **disjoint**. (se usa en Axiom-of-regularity)
 **union-of-sets**
 
-Given a *set* $X$, a **partition** $P(X)$ is a collection of *non-empty*, and pairwise *disjoint* *subsets* $A_i\subseteq X$
-whose *union* is the whole *set*, i.e. $\bigcup_i A_i =X$.
+Given a *set* $X$, a **partition** $P(X)$ is a collection of *non-empty* *subsets* $A_i\subseteq X$, that are pairwise *disjoint* ($A_i \cap A_j = \emptyset$ for any $i\neq j$) and whose *union* is the whole *set*, i.e. $\bigcup_i A_i =X$.
 # relations
 
 A **reflexive** *relation* satisfy $\forall x:xRx$ (i.e. $\forall x:R(x,x)$), an **irreflexive** if $\forall x:\neg (xRx)$, a **symmetric** $\forall x,y:xRy \Leftrightarrow yRx$, an **asymmetric** $\forall x,y:xRy \Rightarrow \neg (yRx)$, an **antisymmetric** $\forall x,y: xRy \wedge yRx \Rightarrow x=y$, a **total** $\forall x,y: xRy \vee yRx$, a **transitive** $\forall x,y,z: xRy \wedge yRz \Rightarrow xRz$, and finally, an **antitransitive** $\forall x,y,z: xRy \wedge yRz \Rightarrow \neg(xRz)$. 
